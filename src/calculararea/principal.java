@@ -11,7 +11,7 @@ package calculararea;
 public class principal {
     
     public static void main(String[] args) {
-        
+       FRmArea a= new  
         
         
     }
