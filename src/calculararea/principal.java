@@ -4,6 +4,8 @@
  */
 package calculararea;
 
+import formularios.FRmArea;
+
 /**
  *
  * @author LYKAN
@@ -11,7 +13,10 @@ package calculararea;
 public class principal {
     
     public static void main(String[] args) {
-       FRmArea a= new  
+       FRmArea a= new FRmArea();
+       a.setVisible(true);
+       
+       
         
         
     }

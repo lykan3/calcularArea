@@ -4,6 +4,9 @@
  */
 package formularios;
 
+import Clases.Area;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LYKAN
@@ -31,11 +34,11 @@ public class FRmArea extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        calcular = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtlargo = new javax.swing.JTextPane();
+        txtLargo = new javax.swing.JTextPane();
         jScrollPane2 = new javax.swing.JScrollPane();
-        txtancho = new javax.swing.JTextPane();
+        txtAncho = new javax.swing.JTextPane();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -67,11 +70,16 @@ public class FRmArea extends javax.swing.JFrame {
 
         jTextField3.setText("LARGO");
 
-        jButton1.setText("CALCULAR");
+        calcular.setText("CALCULAR");
+        calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcularActionPerformed(evt);
+            }
+        });
 
-        jScrollPane1.setViewportView(txtlargo);
+        jScrollPane1.setViewportView(txtLargo);
 
-        jScrollPane2.setViewportView(txtancho);
+        jScrollPane2.setViewportView(txtAncho);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,7 +103,7 @@ public class FRmArea extends javax.swing.JFrame {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(274, 274, 274)
-                        .addComponent(jButton1)))
+                        .addComponent(calcular)))
                 .addContainerGap(257, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -112,12 +120,22 @@ public class FRmArea extends javax.swing.JFrame {
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(151, 151, 151)
-                .addComponent(jButton1)
+                .addComponent(calcular)
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularActionPerformed
+        // TODO add your handling code here:
+        int ancho =Integer.parseInt(txtAncho.getText());
+        int largo =Integer.parseInt(txtLargo.getText());
+        Area are =new Area(ancho,largo);
+        int r = Area.calcularArea(ancho, largo);
+       JOptionPane.showMessageDialog(rootPane,"el area es:"+ r);
+        
+    }//GEN-LAST:event_calcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,7 +173,7 @@ public class FRmArea extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton calcular;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -163,7 +181,7 @@ public class FRmArea extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextPane txtancho;
-    private javax.swing.JTextPane txtlargo;
+    private javax.swing.JTextPane txtAncho;
+    private javax.swing.JTextPane txtLargo;
     // End of variables declaration//GEN-END:variables
 }
